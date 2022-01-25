@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#palavra-secreta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.letras{
+    width: 16px;
+    text-align: center;
+    border-bottom: 2px solid #8b008b;
+    color: #ffffff;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#teclado{
+    margin-top: 300px;
+}
+
+.teclas button{
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    box-shadow:  0px 2px 8px dimgray;
+    border-radius: 5px;
+    border: 1px solid dimgrey;  
+    color: #8b008b;
+    font-weight: 900;
+}
+#btnReiniciar{
+    width: 70px;
+    height: 50px
+}
+
+#categoria{
+    margin-top: 30px;
+    color: #8b008b;
+    font-size: 1.2em;
+}
