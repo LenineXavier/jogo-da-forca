@@ -1,4 +1,5 @@
-let tentativas = 6; //quantidade das partes do corpo da forca
+let tentativas = 6;
+let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 
@@ -210,13 +211,24 @@ const palavras = [
 ];
 
 
-function criarPalavraSecreta (){
-    const indexPalavra = parseInt(Math.random() * palavras.length);
-
+criarPalavraSecreta();
+function criarPalavraSecreta(){
+    const indexPalavra = parseInt(Math.random() * palavras.length)
+    
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
+};
 
+montarPalavraNaTela();
+function montarPalavraNaTela(){
+    const categoria = document.getElementById("categoria");
+    categoria.innerHTML = palavraSecretaCategoria;
+
+    const palavraTela = document.getElementById("palavra-secreta");
+    palavraTela.innerHTML = "";
+
+    for(let i = 0; i <palavraSecretaSorteada.length; i++){
+        
+    }
 }
-
-
 

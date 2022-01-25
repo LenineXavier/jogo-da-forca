@@ -5,7 +5,14 @@
 }
 
 body{
-    
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10px;
+}
+
+#imagem{
+    width: auto;
+    height: auto;
 }
 
 .container{
@@ -16,11 +23,14 @@ body{
     flex-direction: column;
 }
 
+
+
 #palavra-secreta{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-size: 1em;
     margin-top: 30px;
 }
 
