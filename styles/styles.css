@@ -1,72 +1,64 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 
 body{
-    width: 100vw;
-    height: 90vh;
-    margin-top: 10px;
-}
-
-#imagem{
-    width: auto;
-    height: auto;
+    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
 }
-
-
-
-#palavra-secreta{
+.containerForca{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    font-size: 1em;
-    margin-top: 30px;
 }
-
-.letras{
-    width: 16px;
-    text-align: center;
-    border-bottom: 2px solid #8b008b;
-    color: #ffffff;
-    padding: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
+.containerPalavraOculta{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    
 }
+.container-teclado{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 30px;
+    
 
-#teclado{
-    margin-top: 300px;
 }
+h1{
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+span{
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid red;
+    width: 40px;
+    margin:5px;
+    padding-bottom:10px;
+    font-size: 25px;
+    font-weight:bold ;
 
-.teclas button{
-    width: 50px;
-    height: 50px;
-    margin: 2px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    box-shadow:  0px 2px 8px rgb(5, 5, 5);
+}
+button{
+    margin: 5px;
+    width: 30px;
+    padding: 10px;
+    background-color: blue;
+    color: aliceblue;
+    border: 1px solid blue;
     border-radius: 5px;
-    border: 1px solid rgb(240, 225, 225);  
-    color: #096609;
-    font-weight: 900;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
 }
-#btnReiniciar{
-    width: 70px;
-    height: 50px
-}
-
-#categoria{
-    margin-top: 30px;
-    color: #8b008b;
-    font-size: 1.2em;
+button:hover{
+    background-color: blueviolet;
 }
