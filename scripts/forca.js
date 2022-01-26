@@ -35,4 +35,7 @@ for (i = 0; i < letras.length; i++) {
     let div = document.getElementById("letras");
     div.appendChild(botao);
 }
+function escolheLetra(){
+    
+}
 
