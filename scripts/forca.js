@@ -1,41 +1,64 @@
-const arrPalavras = ["computador", "escola","rota", "javascript", "monitor","falso","verdadeiro","carne","erros","ironhack","podcast","livros","gato","teclado","janela","porta","palavras","praia", "mar", "pedreira", "arrocha", "banguela", "desafio", "internet","palindromo", "vassalo","fantasia"];
+const arrPalavras = ["computador", "escola","roleta", "javascript", "monitor","falso","verdadeiro","carne","erros","ironhack","podcast","livros","gato","teclado","janela","porta","palavras","praia", "mar", "pedreira", "arrocha", "banguela", "desafio", "internet","palindromo", "vassalo","fantasia"];
 
 let tentativas = 6;
 let acertos = 0;
 let imagem = 0;
-
+let acertou;
     
 
 
-    const palavra = arrPalavras[Math.floor(Math.random() * arrPalavras.length)];
+let palavra = arrPalavras[Math.floor(Math.random() * arrPalavras.length)];
 
 
 
 
-    for( i = 0 ; i < arrPalavras.length ; i++ ){
+    for( let i = 0 ; i <  palavra.length ; i++ ){
 
         let span = document.createElement("span");
-    span.setAttribute('id', i);
+        span.setAttribute('class', palavra[i]);
+        span.innerText = '';
         let div = document.getElementById("palavra");
         div.appendChild(span);
         
     }
     
-    let alfabeto = "abcdefghijklmnopqrstuvwxyz";
-    let letras = alfabeto.split("");
+  /* let capturandoLetras = "";
 
-for (i = 0; i < letras.length; i++) {
-    let botao = document.createElement("button");
-    let letra = document.createTextNode(letras[i]);
-    
-    botao.appendChild(letra);
-    botao.setAttribute('onclick', 'escolheLetra(\''+letras[i]+'\')');
-    botao.setAttribute('id', letras[i]);
+  function capturarLetras (){
+      capturandoLetras = document.getElementById('valor').value;
+      document.getElementById('palavra').innerHTML = capturandoLetras;
+  } */
 
-    let div = document.getElementById("letras");
-    div.appendChild(botao);
-}
-function escolheLetra(){
+  //verificando letra digitada com palavra sorteada
+const input = document.getElementById('valor')  
+const btn = document.getElementById('btn')
+btn.addEventListener('click', ()=>{
     
-}
+    if(palavra.includes(input.value)){
+        const letraCorreta = document.querySelectorAll(`.${input.value}`)
+        for(let i = 0 ; i < letraCorreta.length ; i++){
+            letraCorreta[i].innerText = input.value;
+        }
+        input.value = "";
+        acertou = true;
+    }else{
+        tentativas--;
+        
+        if(tentativas === 0){
+            window.alert('Fim de jogo')
+        }
+        window.alert('Letra incorreta!');
+        input.value = ""; 
+        
+        }
+        if(acertou === false){
+            imagem++;
+            document.getElementById("forca").src = "Imagem\forca"+imagem+".jpg";
+        }
+      
+})
+
+
+
+
 

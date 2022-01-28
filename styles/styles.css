@@ -2,19 +2,21 @@
 
 body {
     font-family: 'Consolas', Arial, Helvetica, sans-serif;
+    background-color: rgb(155, 133, 229);
 }
 
-.flex-container-1 {
+
+.container {
     display: flex;
     justify-content: center;
 }
 
-.flex-container-2 {
+.palavraSecreta {
     display: flex;
     justify-content: center;
 }
 
-.flex-container-2-2 {
+.palavraSecreta-2 {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -22,7 +24,7 @@ body {
     align-items: flex-end;
 }
 
-.flex-container-3 {
+.teclado {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -55,35 +57,23 @@ button {
     display: flex;
     justify-content: center;
     margin: 5px;
-    width: 35px;
-    padding: 10px 0;
-    background-color: #00698C;
-    color: #FFFFFF;
+    width: 100px;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
     border: 1px solid #00698C;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #0682ac;
+    background-color: rgb(94, 94, 221);
 }
 
-button.novo-bt {
-    width: auto;
-    padding: 10px;
-}
-
-.certa, .certa:hover {
-    background: #0682ac;
-    border: 1px solid #0682ac;
-    cursor: inherit;
-}
-
-.errada, .errada:hover {
-    background: #DC1F27;
-    border: 1px solid #DC1F27;
-    cursor: inherit;
+input{
+    width: 50px;
+    font-size: 30px;
 }

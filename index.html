@@ -5,20 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css" media="screen">
-    <title>Jogo da Forca</title>
+    <title class=>Jogo da Forca</title>
 </head>
 <body>
-        <header class="container">
+        <header class="flexcontainer">
             <h1>Jogo da Forca</h1>
 
-            <section class="flex-container-2">
+            <section class="palavraSecreta">
                 <img id="forca" src="./Imagem/forca.png" alt="Forca">
-                <div id="palavra" class="flex-container-2-2">
+                <div id="palavra" class="palavraSecreta-2">
+                    <!-- <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> -->
                 </div>
                 <div id="novo"></div>
             </section>
-            <section id="letras" class="flex-container-3">
-                
+            <section id="letras" class="teclado">
+                <input type = "text" id="valor" maxLength="1"/>
+                <button type="button" id="btn">Digite a letra</button>
+
                
             </section>
         <script src="./scripts/forca.js"></script>
