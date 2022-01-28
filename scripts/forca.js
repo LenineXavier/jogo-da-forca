@@ -51,10 +51,8 @@ btn.addEventListener('click', ()=>{
         input.value = ""; 
         
         }
-        if(acertou === false){
-            imagem++;
-            document.getElementById("forca").src = "Imagem\forca"+imagem+".jpg";
-        }
+        
+        console.log(tentativas)
       
 })
 
