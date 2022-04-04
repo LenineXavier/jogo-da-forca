@@ -1,6 +1,8 @@
 const palavras = ["computador", "escola","roleta", "javascript", "monitor","falso","verdadeiro","carne","erros","ironhack","podcast","livros","gato","teclado","janela","porta","palavras","praia", "mar", "pedreira", "arrocha", "banguela", "desafio", "internet","palindromo", "vassalo","fantasia"];
 
-let tentativas = 6;
+let palavra = palavras[Math.floor(Math.random() * palavras.length)];
+
+let chances = 6;
 let acertos = 0;
 let imagem = 0;
 
@@ -8,7 +10,7 @@ let posicao;
     
 
 
-let palavra = palavras[Math.floor(Math.random() * arrPalavras.length)];
+
 
 
 
@@ -58,7 +60,7 @@ function escolheLetra(letra) {
 
     if (acertou === false) {
         imagem++;
-        document.getElementById("forca").src = "./images/forca-"+imagem+".png";
+        document.getElementById("forca").src = "./Imagem/forca-"+imagem+".png";
 
         var botao = document.getElementById(letra);
         botao.setAttribute('class', 'errada');
