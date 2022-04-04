@@ -1,60 +1,106 @@
-const arrPalavras = ["computador", "escola","roleta", "javascript", "monitor","falso","verdadeiro","carne","erros","ironhack","podcast","livros","gato","teclado","janela","porta","palavras","praia", "mar", "pedreira", "arrocha", "banguela", "desafio", "internet","palindromo", "vassalo","fantasia"];
+const palavras = ["computador", "escola","roleta", "javascript", "monitor","falso","verdadeiro","carne","erros","ironhack","podcast","livros","gato","teclado","janela","porta","palavras","praia", "mar", "pedreira", "arrocha", "banguela", "desafio", "internet","palindromo", "vassalo","fantasia"];
 
 let tentativas = 6;
 let acertos = 0;
 let imagem = 0;
-let acertou;
+
+let posicao;
     
 
 
-let palavra = arrPalavras[Math.floor(Math.random() * arrPalavras.length)];
+let palavra = palavras[Math.floor(Math.random() * arrPalavras.length)];
 
 
 
 
-    for( let i = 0 ; i <  palavra.length ; i++ ){
+for (posicao = 0; posicao < palavra.length; posicao++) {
+    let span = document.createElement("span");
+    span.setAttribute('id', posicao);
 
-        let span = document.createElement("span");
-        span.setAttribute('class', palavra[i]);
-        span.innerText = '';
-        let div = document.getElementById("palavra");
-        div.appendChild(span);
-        
+    let div = document.getElementById("palavra");
+    div.appendChild(span);
+}
+
+let alfabeto = "abcdefghijklmnopqrstuvwxyz";
+let letras = alfabeto.split("");
+
+for (posicao = 0; posicao < letras.length; posicao++) {
+    let botao = document.createElement("button");
+    let letra = document.createTextNode(letras[posicao]);
+    
+    botao.appendChild(letra);
+    botao.setAttribute('onclick', 'escolheLetra(\''+letras[posicao]+'\')');
+    botao.setAttribute('id', letras[posicao]);
+
+    let div = document.getElementById("letras");
+    div.appendChild(botao);
+}
+
+function escolheLetra(letra) {
+
+    let acertou = false;
+
+    for (posicao = 0; posicao < palavra.length; posicao++) {
+        if (letra === palavra[posicao]) {
+            let span = document.getElementById(posicao);
+            let l = document.createTextNode(letra);
+
+            span.appendChild(l);
+
+            let botao = document.getElementById(letra);
+            botao.setAttribute('class', 'certa');
+            botao.removeAttribute('onclick');
+
+            acertos++;
+            acertou = true;
+        }
     }
-    
-  /* let capturandoLetras = "";
 
-  function capturarLetras (){
-      capturandoLetras = document.getElementById('valor').value;
-      document.getElementById('palavra').innerHTML = capturandoLetras;
-  } */
+    if (acertou === false) {
+        imagem++;
+        document.getElementById("forca").src = "./images/forca-"+imagem+".png";
 
-  //verificando letra digitada com palavra sorteada
-const input = document.getElementById('valor')  
-const btn = document.getElementById('btn')
-btn.addEventListener('click', ()=>{
-    
-    if(palavra.includes(input.value)){
-        const letraCorreta = document.querySelectorAll(`.${input.value}`)
-        for(let i = 0 ; i < letraCorreta.length ; i++){
-            letraCorreta[i].innerText = input.value;
-        }
-        input.value = "";
-        acertou = true;
-    }else{
-        tentativas--;
+        var botao = document.getElementById(letra);
+        botao.setAttribute('class', 'errada');
+        botao.removeAttribute('onclick');
+
+        chances--;
+    }
+
+    if (chances === 0) {
+        let mensagem = document.createElement("p");
+        let t1 = document.createTextNode("Você perdeu!");
+        mensagem.appendChild(t1);
+
+        let botao = document.createElement("button");
+        let t2 = document.createTextNode("jogar novamente");
         
-        if(tentativas === 0){
-            window.alert('Fim de jogo')
-        }
-        window.alert('Letra incorreta!');
-        input.value = ""; 
+        botao.appendChild(t2);
+        botao.setAttribute('class', 'novo-bt');
+        botao.setAttribute('onclick', 'window.location.reload()');
+
+        let div = document.getElementById("novo");
+        div.appendChild(mensagem);
+        div.appendChild(botao);
+    }
+
+    if (acertos === palavra.length) {
+        let mensagem = document.createElement("p");
+        let t1 = document.createTextNode("Você venceu!");
+        mensagem.appendChild(t1);
+
+        let botao = document.createElement("button");
+        let t2 = document.createTextNode("jogar novamente");
         
-        }
-        
-        console.log(tentativas)
-      
-})
+        botao.appendChild(t2);
+        botao.setAttribute('class', 'novo-bt');
+        botao.setAttribute('onclick', 'window.location.reload()');
+
+        let div = document.getElementById("novo");
+        div.appendChild(mensagem);
+        div.appendChild(botao);
+    }
+}
 
 
 
